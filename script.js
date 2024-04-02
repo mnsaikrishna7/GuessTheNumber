@@ -33,7 +33,9 @@ document.querySelector('.check').addEventListener('click', function(){
     else if(guess === secretNumber){
         document.querySelector('.message').textContent='🎉 Correct Number !';
         document.querySelector('.number').textContent=secretNumber;
+        if(highestScore <= score){
         highestScore=score;
+        }
         document.querySelector('.highscore').textContent = highestScore;
         document.querySelector('body').style.backgroundColor='#60b347';
         document.querySelector('.number').style.width='30rem';
@@ -51,7 +53,7 @@ document.querySelector('.check').addEventListener('click', function(){
 //this function resets values to initial game value, when you click on Again! button
 document.querySelector('.again').addEventListener('click',function(){
     score=20;
-    highestScore=0;
+    highestScore=highestScore;
     document.querySelector('body').style.backgroundColor='#222';
     document.querySelector('.message').textContent='Start guessing...';
     document.querySelector('.number').style.width='15rem';
@@ -60,6 +62,7 @@ document.querySelector('.again').addEventListener('click',function(){
     document.querySelector('.highscore').textContent=highestScore;
     document.querySelector('.number').textContent='?';
     secretNumber = Math.trunc(Math.random()*20)+1;
+    document.querySelector('.check').disabled=false;
 
 })
 
