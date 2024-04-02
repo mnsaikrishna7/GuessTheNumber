@@ -41,6 +41,11 @@ document.querySelector('.check').addEventListener('click', function(){
         
     }
 
+    if(score === 0){
+        document.querySelector('.message').textContent='☹️ YOU LOST THE GAME !';  
+        document.querySelector('.check').setAttribute("disabled","");
+    }
+
 })
 
 //this function resets values to initial game value, when you click on Again! button
