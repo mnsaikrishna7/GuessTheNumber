@@ -12,6 +12,10 @@ document.querySelector(".check").addEventListener("click", function () {
   if (!guess) {
     document.querySelector(".message").textContent = "⛔ No Number";
   }
+  if (guess <= 0 || guess > 20) {
+    document.querySelector(".message").textContent =
+      "⛔ Guess is not in range between 1-20";
+  }
   //if guess is higher than the actual secret number
   else if (guess > secretNumber) {
     score--;
