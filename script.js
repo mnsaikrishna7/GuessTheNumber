@@ -28,6 +28,7 @@ document.querySelector(".check").addEventListener("click", function () {
 
   //if the guess is corret
   else if (guess === secretNumber) {
+    document.querySelector(".check").disabled = true;
     document.querySelector(".message").textContent = "🎉 Correct Number !";
     document.querySelector(".number").textContent = secretNumber;
     if (highestScore <= score) {
