@@ -117,3 +117,10 @@ h1 {
 .label-score {
   margin-bottom: 2rem;
 }
+.footer {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  font-size: 14px;
+  color: #ccc;
+}
