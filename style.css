@@ -124,3 +124,10 @@ h1 {
   font-size: 14px;
   color: #ccc;
 }
+.hint {
+  margin-bottom: 6rem;
+  height: 1rem;
+  color: peachpuff;
+  font-family: inherit;
+  font-size: small;
+}

@@ -4,6 +4,7 @@
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20; // set initial score to 20
 let highestScore = 0; // set initial highest score to 0
+let wrongAttemptCount = 0; //set initial wrong attempt to 0
 
 document.querySelector(".check").addEventListener("click", function () {
   const guess = Number(document.querySelector(".guess").value);
@@ -18,15 +19,31 @@ document.querySelector(".check").addEventListener("click", function () {
   //if guess is higher than the actual secret number
   else if (guess > secretNumber) {
     score--;
+    wrongAttemptCount++;
     document.querySelector(".message").textContent = "📈 Too High ";
     document.querySelector(".score").textContent = score;
+    if (wrongAttemptCount >= 2) {
+      let minNumber = secretNumber - 3 < 1 ? 1 : secretNumber - 3;
+      let maxNumber = secretNumber + 3 > 20 ? 20 : secretNumber + 3;
+      document.querySelector(
+        ".hint"
+      ).textContent = `🤔 Hint : Try in range ${minNumber} and ${maxNumber}`;
+    }
   }
 
   // if the guess is lower than the actual secret number
   else if (guess < secretNumber) {
     score--;
+    wrongAttemptCount++;
     document.querySelector(".message").textContent = "📉 Too Low";
     document.querySelector(".score").textContent = score;
+    if (wrongAttemptCount >= 2) {
+      let minNumber = secretNumber - 3 < 1 ? 1 : secretNumber - 3;
+      let maxNumber = secretNumber + 3 > 20 ? 20 : secretNumber + 3;
+      document.querySelector(
+        ".hint"
+      ).textContent = `🤔 Hint : Try in range ${minNumber} and ${maxNumber}`;
+    }
   }
 
   //if the guess is corret
