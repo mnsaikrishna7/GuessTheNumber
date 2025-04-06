@@ -58,6 +58,7 @@ document.querySelector(".check").addEventListener("click", function () {
     document.querySelector("body").style.backgroundColor = "#60b347";
     document.querySelector(".number").style.width = "30rem";
     document.querySelector(".footer").style.color = "#000";
+    document.querySelector(".hint").style.color = "#000";
   }
 
   if (score === 0) {
@@ -83,4 +84,5 @@ document.querySelector(".again").addEventListener("click", function () {
   document.querySelector(".hint").textContent =
     "Hint: Wait for 2 wrong attempts 😉";
   document.querySelector("footer").style.color = "#ccc";
+  document.querySelector(".hint").style.color = "peachpuff";
 });
