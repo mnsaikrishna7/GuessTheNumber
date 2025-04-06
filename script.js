@@ -79,4 +79,8 @@ document.querySelector(".again").addEventListener("click", function () {
   document.querySelector(".number").textContent = "?";
   secretNumber = Math.trunc(Math.random() * 20) + 1;
   document.querySelector(".check").disabled = false;
+  wrongAttemptCount = 0;
+  document.querySelector(".hint").textContent =
+    "Hint: Wait for 2 wrong attempts 😉";
+  document.querySelector("footer").style.color = "#ccc";
 });
